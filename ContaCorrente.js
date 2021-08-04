@@ -7,7 +7,7 @@ export class ContaCorrente {
     //#saldo - privado
     _saldo = 0;
 
-    
+
     //ACESSORES
     set cliente(novoValor) {
         if (novoValor instanceof Cliente){
@@ -21,6 +21,11 @@ export class ContaCorrente {
 
     get saldo(){
         return this._saldo;
+    }
+
+    constructor(cliente, agencia){
+        this.agencia = agencia;
+        this.cliente = cliente; //tô usando o acessor dentro do construtor
     }
 
     

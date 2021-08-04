@@ -1,6 +1,6 @@
 export class Cliente {
-    nome;
-    _cpf;
+//    nome; //excluir para adequar - propriedades devem ficar DENTRO dos métodos da classe - melhor dentro do construtor
+//    _cpf;
 
     get cpf(){
         return this._cpf;

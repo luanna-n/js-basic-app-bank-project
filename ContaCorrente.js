@@ -2,11 +2,11 @@ import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
     static numeroContas = 0; //toda vez que instanciar um objeto, ele vai contar +1 - esse é um atributo da classe em si e não das instâncias
-    agencia;
-    _cliente;
+//    agencia; ////excluir para adequar - propriedades devem ficar DENTRO dos métodos da classe - melhor dentro do construtor
+//    _cliente;
 
     //#saldo - privado
-    _saldo = 0;
+//    _saldo = 0;
 
 
     //ACESSORES
@@ -26,7 +26,8 @@ export class ContaCorrente {
 
     constructor(agencia, cliente){ //se inverter os parametos, ele também vai mandar invertido
         this.agencia = agencia;
-        this.cliente = cliente; //tô usando o acessor dentro do construtor
+        this.cliente = cliente;
+        this._saldo = 0;
         ContaCorrente.numeroContas += 1;
     }
 

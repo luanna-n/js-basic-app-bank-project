@@ -7,6 +7,14 @@ export class ContaCorrente extends Conta {
         //resolve o problema da classe derivada
         ContaCorrente.numeroContas += 1;
     }
-}
 
-//to herdando tudo da classe conta, por isso pude apagar os metodos & os parametros que estavam dentro do construtor
+    //vai sobrescrever o comportamento da classe pai
+    sacar(valor) {
+        let taxa = 1.1;
+        const valorSacado = taxa * valor; //especialização do comportamento da conta corrente
+        if(this._saldo >= valorSacado) {
+            this._saldo -= valorSacado;
+            return valorSacado;
+        }
+    }
+}

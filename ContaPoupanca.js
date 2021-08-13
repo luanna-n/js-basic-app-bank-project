@@ -6,5 +6,3 @@ export class ContaPoupanca extends Conta {
         //resolve o problema da classe derivada
     }
 }
-
-//to herdando tudo da classe conta, por isso pude apagar os metodos & os parametros que estavam dentro do construtor

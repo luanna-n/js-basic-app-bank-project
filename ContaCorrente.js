@@ -2,27 +2,7 @@ import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente {
     static numeroContas = 0; //toda vez que instanciar um objeto, ele vai contar +1 - esse é um atributo da classe em si e não das instâncias
-//    agencia; ////excluir para adequar - propriedades devem ficar DENTRO dos métodos da classe - melhor dentro do construtor
-//    _cliente;
 
-    //#saldo - privado
-//    _saldo = 0;
-
-
-    //ACESSORES
-    set cliente(novoValor) {
-        if (novoValor instanceof Cliente){
-            this._cliente = novoValor;
-        }
-    }
-
-    get cliente(){
-        return this._cliente;
-    }
-
-    get saldo(){
-        return this._saldo;
-    }
 
     constructor(agencia, cliente){ //se inverter os parametos, ele também vai mandar invertido
         this.agencia = agencia;

@@ -1,34 +1,12 @@
-import { Cliente } from "./Cliente.js";
+import { Conta } from "./Conta.js";
 
-export class ContaCorrente {
+export class ContaCorrente extends Conta {
     static numeroContas = 0; //toda vez que instanciar um objeto, ele vai contar +1 - esse é um atributo da classe em si e não das instâncias
-
-
-    constructor(agencia, cliente){ //se inverter os parametos, ele também vai mandar invertido
-        this.agencia = agencia;
-        this.cliente = cliente;
-        this._saldo = 0;
+    constructor(cliente, agencia){
+        super(0, cliente, agencia); //chama o construtor da classe pai
+        //resolve o problema da classe derivada
         ContaCorrente.numeroContas += 1;
     }
-
-    
-    //MÉTODOS
-    sacar(valor) {
-        if(this._saldo >= valor) {
-            this._saldo -= valor;
-            return valor;
-        }
-    }
-
-    depositar(valor) {
-        if(valor <= 100) {
-            return;
-        }
-        this._saldo += valor;
-    }
-
-    transferir(valor, conta) {
-        const valorSacado = this.sacar(valor);
-        conta.depositar(valorSacado);
-    }
 }
+
+//to herdando tudo da classe conta, por isso pude apagar os metodos & os parametros que estavam dentro do construtor

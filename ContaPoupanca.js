@@ -1,28 +1,10 @@
-export class ContaPoupanca {
+import { Conta } from "./Conta.js";
+
+export class ContaPoupanca extends Conta {
     constructor(saldoInicial, cliente, agencia){
-        this._saldo = saldoInicial;
-        this._cliente = cliente;
-        this._agencia = agencia;
-    }
-
-    
-    //MÉTODOS
-    sacar(valor) {
-        if(this._saldo >= valor) {
-            this._saldo -= valor;
-            return valor;
-        }
-    }
-
-    depositar(valor) {
-        if(valor <= 100) {
-            return;
-        }
-        this._saldo += valor;
-    }
-
-    transferir(valor, conta) {
-        const valorSacado = this.sacar(valor);
-        conta.depositar(valorSacado);
+        super(saldoInicial, cliente, agencia); //chama o construtor da classe pai
+        //resolve o problema da classe derivada
     }
 }
+
+//to herdando tudo da classe conta, por isso pude apagar os metodos & os parametros que estavam dentro do construtor

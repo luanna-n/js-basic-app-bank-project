@@ -4,7 +4,7 @@ export class Conta{
         //Avisa ao desenvolvedor que ele não deveria construir um objeto Conta
         if(this.constructor == Conta){
             //Cria um objeto do tipo erro que vai parar a execução
-            throw new Error("Você não deveria instanciar um objeto do tipo Conta diretamente");
+            throw new Error("Você não deveria instanciar um objeto do tipo Conta diretamente, pois essa é uma classe abstrata.");
         }
         this._saldo = saldoInicial;
         this._cliente = cliente;
@@ -29,9 +29,11 @@ export class Conta{
 
     
     //MÉTODOS
-    sacar(valor) {
-        let taxa = 1;
-        return this._sacar(valor, taxa);
+    sacar(valor) {//Método abstrato - como todas as contas precisam sobrescresver esse comportamento, já que todas as contas pagarão taxa, essa é a melhor forma de proteger
+        // let taxa = 1;
+        // return this._sacar(valor, taxa);
+        throw new Error("O método Sacar da conta é abstrato!");
+        //se alguma classe filha esquecer de implementar esse método, ela vai receber um erro
     }
 
     _sacar(valor, taxa){

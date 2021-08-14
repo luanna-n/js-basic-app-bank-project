@@ -1,11 +1,15 @@
+//CLASSE ABSTRATA - FEITA PARA SER HERDADA - NÃO DEVE SER INSTANCIADA
 export class Conta{
     constructor(saldoInicial, cliente, agencia){
+        //Avisa ao desenvolvedor que ele não deveria construir um objeto Conta
+        if(this.constructor == Conta){
+            //Cria um objeto do tipo erro que vai parar a execução
+            throw new Error("Você não deveria instanciar um objeto do tipo Conta diretamente");
+        }
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
-        if(this.constructor == Conta){
-            console.log("Você não deveria instanciar um objeto do tipo Conta")
-        }
+        
     }
 
     //ACESSORES

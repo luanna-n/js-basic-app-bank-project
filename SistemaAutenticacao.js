@@ -1,6 +1,7 @@
 //Ser autenticavel significa ter a propriedade senha
 //É necessario evitar a exposicao dessa senha
 //Ser autenticavel agora é ter o metodo autenticar
+//Duck Typing - não interessa o que ele é, só interessa se ele tem a propriedade que eu quero usar
 
 export class SistemaAutenticacao{
     static login(autenticavel, senha){

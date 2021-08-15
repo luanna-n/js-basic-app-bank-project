@@ -6,7 +6,16 @@ import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 const diretor = new Diretor("Rodrigo", 10000, 12345678900);
 diretor.cadastrarSenha("12345"); //cadastra a senha
 const gerente = new Gerente("Joao", 5000, 98745612300);
+gerente.cadastrarSenha("6789");
 
-const estaLogado = SistemaAutenticacao.login(diretor, "12345"); //ve se a senha é igual a cadastrada
+const cliente = new Cliente("Maria", 11122233344, "777");
 
-console.log(estaLogado); //retorna true or false para funcionario.senha == senha
+const gerenteEstaLogado = SistemaAutenticacao.login(gerente, "6789"); //ve se a senha é igual a cadastrada
+const diretorEstaLogado = SistemaAutenticacao.login(diretor, "12345");
+
+const clienteEstaLogado = SistemaAutenticacao.login(cliente, "777");
+//se em SistemaAutenticacao tiver funcionario._senha == senha ==> isso retorna TRUE ==> aqui busca a propriedade senha
+//se em SistemaAutenticacao tiver funcionario.senha == senha ==> isso retorna FALSE ==> aqui busca o acessor de senha
+
+console.log(gerenteEstaLogado, diretorEstaLogado); //retorna true or false para funcionario.senha == senha
+console.log(clienteEstaLogado);

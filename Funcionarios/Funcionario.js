@@ -9,11 +9,15 @@ export class Funcionario {
     }
 
     //ACESSOR
-    get senha(){
-        return this._senha;
-    }
+    // get senha(){
+    //     return this._senha
+    // }
 
     //METODO
+    autenticar(senha){
+        return senha == this._senha;
+    }
+
     cadastrarSenha(senha){
         this._senha = senha;
     }

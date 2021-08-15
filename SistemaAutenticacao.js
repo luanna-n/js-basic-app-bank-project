@@ -1,5 +1,9 @@
+//Ser autenticavel significa ter a propriedade senha
+//É necessario evitar a exposicao dessa senha
+//Ser autenticavel agora é ter o metodo autenticar
+
 export class SistemaAutenticacao{
-    static login(funcionario, senha){
-        return funcionario.senha == senha;
+    static login(autenticavel, senha){
+        return autenticavel.autenticar(senha);
     }
 }

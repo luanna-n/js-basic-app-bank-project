@@ -1,22 +1,12 @@
 import { Cliente } from "./Cliente.js";
-import { Conta } from "./Contas/Conta.js"; //REMOVER ESSE IMPORT, ESSA CLASSE É ABSTRATA
-import { ContaCorrente } from "./Contas/ContaCorrente.js";
-import { ContaPoupanca } from "./Contas/ContaPoupanca.js";
-import { ContaSalario } from "./Contas/ContaSalario.js";
+import { Gerente } from "./Funcionarios/Gerente.js";
+import { Diretor } from "./Funcionarios/Diretor.js";
+import { SistemaAutenticacao } from "./SistemaAutenticacao.js";
 
-const cliente1 = new Cliente("Ricardo", 12345678912);
+const diretor = new Diretor("Rodrigo", 10000, 12345678900);
+diretor.cadastrarSenha("12345"); //cadastra a senha
+const gerente = new Gerente("Joao", 5000, 98745612300);
 
-const contaCorrenteRicardo = new ContaCorrente(cliente1, 1001);
-contaCorrenteRicardo.depositar(500);
-contaCorrenteRicardo.sacar(100);
+const estaLogado = SistemaAutenticacao.login(diretor, "12345"); //ve se a senha é igual a cadastrada
 
-const contaPoupanca = new ContaPoupanca (50, cliente1, 1001);
-contaPoupanca.sacar(10);
-
-const contaSalario = new ContaSalario (cliente1);
-contaSalario.depositar(100);
-contaSalario.sacar(10);
-
-// console.log(contaPoupanca);
-// console.log(contaCorrenteRicardo);
-console.log(contaSalario);
+console.log(estaLogado); //retorna true or false para funcionario.senha == senha

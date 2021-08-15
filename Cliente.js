@@ -10,9 +10,12 @@ export class Cliente {
         this.nome = nome;
         this._cpf = cpf;
         this._senha = senha;
+        // this.autenticar = 1;
+        //se eu adicionar autenticar desse modo, vai dar um erro porque autenticar PRECISA ser uma função
+        //e nesse caso ela não é
     }
 
-    //faz com que meu cliente sempre retorne true
+    //é uma função e faz com que meu cliente sempre retorne true
     autenticar(){
         return true;
     }

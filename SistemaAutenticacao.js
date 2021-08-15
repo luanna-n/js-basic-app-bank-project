@@ -4,6 +4,14 @@
 
 export class SistemaAutenticacao{
     static login(autenticavel, senha){
-        return autenticavel.autenticar(senha);
+        if(SistemaAutenticacao.ehAutenticavel(autenticavel)){
+            return autenticavel.autenticar(senha);
+        }
+        return false;
+    }
+    static ehAutenticavel(autenticavel){
+        return "autenticar" in autenticavel && //verifica se essa chave existe dentro deste objeto
+            autenticavel.autenticar instanceof Function; //verifica se é uma instancia de uma função
+        
     }
 }

@@ -1,8 +1,8 @@
 import { Cliente } from "./Cliente.js";
-import { Conta } from "./Conta.js"; //REMOVER ESSE IMPORT, ESSA CLASSE É ABSTRATA
-import { ContaCorrente } from "./ContaCorrente.js";
-import { ContaPoupanca } from "./ContaPoupanca.js";
-import { ContaSalario } from "./ContaSalario.js";
+import { Conta } from "./Contas/Conta.js"; //REMOVER ESSE IMPORT, ESSA CLASSE É ABSTRATA
+import { ContaCorrente } from "./Contas/ContaCorrente.js";
+import { ContaPoupanca } from "./Contas/ContaPoupanca.js";
+import { ContaSalario } from "./Contas/ContaSalario.js";
 
 const cliente1 = new Cliente("Ricardo", 12345678912);
 
